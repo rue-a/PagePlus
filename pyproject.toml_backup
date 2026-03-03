@@ -1,0 +1,48 @@
+[tool.poetry]
+name = "pageplus"
+version = "1.0.0"
+description = ""
+authors = ["JKamlah <jan.kamlah@uni-mannheim.de>"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+pageplus = "pageplus.main:app"
+install-extras = "tools.install_extras:app"
+pageplus-gui = "pageplus.gui.run:main"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+typer = {extras = ["all"], version = "^0.17.3"}
+lxml = "^6.0.1"
+shapely = "^2.1.1"
+python-dotenv = "^1.1.1"
+requests = "^2.32.5"
+urllib3 = "^2.5.0"
+openpyxl = "^3.1.5"
+json_repair = "^0.50.0"
+pillow = "^11.3.0"
+langcodes = "^3.5.0"
+chardet = "^5.2.0"
+uniseg = "^0.10.0"
+jinja2 = "^3.1.6"
+rapidfuzz = "^3.14.0"
+attrs = "^25.3.0"
+multimethod = "^2.0"
+pikepdf = "^10.0.0"
+google-genai = "^1.32.0"
+numpy = {version = "^1.26.4", optional = true}
+scikit-image = {version = "^0.22.0", optional = true}
+aiofiles = "^24.1.0"
+unicodedataplus = "^16.0.0.post1"
+
+# GUI-related packages
+streamlit = { version = "^1.50.0", optional = true }
+pyqt6 = { version = ">=6.7.0,<7", optional = true }
+
+
+[tool.poetry.extras]
+gui = ["streamlit", "pyqt6", "numpy", "scikit-image"]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
